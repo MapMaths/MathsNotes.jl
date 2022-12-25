@@ -83,5 +83,4 @@ julia> lHôpital(x -> exp(-1/x^2), x -> x^2, 0)
 
 ## Need to improve
 
-1. The third method calculating the curvature is always positive, which provides only the absolute value of curvature.
-2. l'Hospital's Rule calculator sometimes give different answers using different libs.
+2. L'Hospital's Rule calculator sometimes give different answers using different libs.
