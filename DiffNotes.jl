@@ -13,7 +13,7 @@ module DiffNotes
     ∂(f::Function; n::Integer = 1) = x -> ∂(f, x; n)
     κ(R::Real) = 1/R
     κ(x::Function, y::Function, t::Real) = (d(x, t)*d²(y, t) - d(y, t)*d²(x, t))/(d(x, t)^2 + d(y, t)^2)^1.5
-    κ(s::Vector{Function}, t::Real) = norm([d(s[1], t), d(s[2], t), 0]×[d²(s[1], t), d²(s[2], t), 0])/norm([d(s[1], t), d(s[2], t)])^3
+    κ(s::Vector{Function}, t::Real) = ([d(s[1], t), d(s[2], t), 0]×[d²(s[1], t), d²(s[2], t), 0])[3]/norm([d(s[1], t), d(s[2], t)])^3
     function lHôpital(f::Function, g::Function, a::Number)
         df = d(f, a); dg = d(g, a)
         isnan(f(a)/g(a)) & !isnan(df) & !isnan(dg) ? isnan(df/dg) ? lHôpital(x -> d(f, x), x -> d(g, x), a) : df/dg : throw(ArgumentError("The conditions of l'Hôpital's rule isn't satisfied for f/g at a.\nf(x): $(f(a)), g(x): $(g(a)), df/dx: $df, dg/dx: $dg"))
