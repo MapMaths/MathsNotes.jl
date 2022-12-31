@@ -83,4 +83,4 @@ julia> lHôpital(x -> exp(-1/x^2), x -> x^2, 0)
 
 ## Need to improve
 
-2. L'Hospital's Rule calculator sometimes give different answers using different libs.
+1. L'Hospital's Rule calculator sometimes gives different answers using different libs.
