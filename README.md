@@ -1,8 +1,8 @@
 # DiffNotes
-> Just some notes taken when I am studying Calculus, still updating.
+> Some notes taken when I am studying Mathematical skills, still updating.
 
 ## Highlights
-These codes will make it more convenient while programming on Calculus.
+These codes will make it more convenient while programming on Maths (Mainly calculus).
 
 ## Usage
 ### Add dependencies
@@ -39,7 +39,7 @@ d (generic function with 2 method)
 
 ### Now use it!
 
-The codes contains functions providing the calculation of derivative, derivative function, second and higher derivative (and their corresponding functions), partial derivative (function), curvature and l'Hospital's rule.
+The codes contains functions providing the calculation of derivative, derivative function, second and higher derivative (and their corresponding functions), partial derivative (function), curvature, l'Hospital's rule, ASR (Adaptive Simpson's Rule), CFS (Continuous Fourier Series).
 
 Note: the derivative function calculator will not do any symbolic calculations, as it is just a abbreviation for `x -> d(f, x)`
 
