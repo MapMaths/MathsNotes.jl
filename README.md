@@ -1,4 +1,4 @@
-# DiffNotes
+# MathsNotes
 > Some notes taken when I am studying Mathematical skills, still updating.
 
 ## Highlights
@@ -18,10 +18,10 @@ julia> ]
 (Actually I don't want to upload these codes to Julia Packages, since they are too simple)
 
 ```Julia
-julia> include("desktop/diffnotes.jl") # Here I put the codes on Desktop
-Main.DiffNotes
+julia> include("Desktop/MathsNotes.jl") # Here I put the codes on Desktop
+Main.MathsNotes
 
-julia> using .DiffNotes
+julia> using .MathsNotes
 ```
 
 ### Select a library (Calculus/ForwardDiff)
