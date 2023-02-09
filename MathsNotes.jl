@@ -1,4 +1,4 @@
-module DiffNotes
+module MathsNotes
     using ForwardDiff, LinearAlgebra, Calculus
     export @uselib, d, d², dⁿ, ∂, κ, lHôpital
     macro uselib(lib)
