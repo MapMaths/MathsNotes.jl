@@ -1,6 +1,6 @@
 module MathsNotes
     using ForwardDiff, LinearAlgebra, Calculus
-    export @uselib, d, d², dⁿ, ∂, κ, lHôpital
+    export @uselib, d, d², dⁿ, ∂, κ, lHôpital, RationalRootTheorem
     macro uselib(lib)
         return :( d(f::Function, x::Number) = $lib.derivative(f, x) )
     end
@@ -17,5 +17,29 @@ module MathsNotes
     function lHôpital(f::Function, g::Function, a::Number)
         df = d(f, a); dg = d(g, a)
         isnan(f(a)/g(a)) & !isnan(df) & !isnan(dg) ? isnan(df/dg) ? lHôpital(x -> d(f, x), x -> d(g, x), a) : df/dg : throw(ArgumentError("The conditions of l'Hôpital's rule isn't satisfied for f/g at a.\nf(x): $(f(a)), g(x): $(g(a)), df/dx: $df, dg/dx: $dg"))
+    end
+    function finddiv(n::Integer)
+        a = []
+        for i = 1:Int(floor(√abs(n)))
+            n%i == 0 && append!(a, i^2 == abs(n) ? [i] : [i, n÷i])
+        end
+        a
+    end
+    function con(a::Vector, n::Union{Integer, Rational})
+        s = a[end]
+        for i = 1:length(a)-1
+            s += a[i]*n^(length(a)-i)
+        end
+        s
+    end
+    function RationalRootTheorem(a::Vector)
+        s = con(a, 0) == 0 ? [0] : []
+        db = finddiv(a[1])
+        de = finddiv(a[end])
+        for p ∈ de, q ∈ db
+            con(a, p//q) == 0 && push!(s, q == 1 ? p : p//q)
+            con(a, -p//q) == 0 && push!(s, q == 1 ? -p : -p//q)
+        end
+        s
     end
 end
