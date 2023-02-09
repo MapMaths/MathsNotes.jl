@@ -39,7 +39,11 @@ d (generic function with 2 method)
 
 ### Now use it!
 
-The codes contains functions providing the calculation of derivative, derivative function, second and higher derivative (and their corresponding functions), partial derivative (function), curvature, l'Hospital's rule, ASR (Adaptive Simpson's Rule), CFS (Continuous Fourier Series).
+The codes contains functions providing these features:
+
+Calculus: derivative, derivative function, second and higher derivative (and their corresponding functions), partial derivative (function), curvature, l'Hospital's rule, ASR (Adaptive Simpson's Rule), CFS (Continuous Fourier Series).
+
+Basic Algebra: Rational Root Theorem.
 
 Note: the derivative function calculator will not do any symbolic calculations, as it is just a abbreviation for `x -> d(f, x)`
 
