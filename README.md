@@ -41,11 +41,17 @@ d (generic function with 2 method)
 
 The codes contains functions providing these features:
 
-Calculus: derivative, derivative function, second and higher derivative (and their corresponding functions), partial derivative (function), curvature, l'Hospital's rule, ASR (Adaptive Simpson's Rule), CFS (Continuous Fourier Series), Lagrange's Interpolation, Whittaker-Shannon's Interpolation.
+Real Analysis: derivative, derivative function, second and higher derivative (and their corresponding functions), partial derivative (function), l'Hospital's rule.
 
-Basic Algebra: Rational Root Theorem.
+Numeric Analysis: Lagrange's Interpolation, ASR (Adaptive Simpson's Rule)
 
-Note: the derivative function calculator will not do any symbolic calculations, as it is just a abbreviation for `x -> d(f, x)`
+Harmonic Analysis: CFS (Continuous Fourier Series), Whittaker-Shannon's Interpolation
+
+Differential Geometry: curvature
+
+Elementary Algebra: Rational Root Theorem.
+
+Note: the derivative function calculator will NOT do any symbolic calculations, as it is just a abbreviation for `x -> d(f, x)`
 
 ```Julia
 julia> @uselib ForwardDiff
