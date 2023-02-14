@@ -1,5 +1,5 @@
 module MathsNotes
-    using ForwardDiff, LinearAlgebra, Calculus, Plots
+    using ForwardDiff, LinearAlgebra, Calculus
     export @uselib, d, d², dⁿ, ∂, κ, lHôpital, rrt, lag, simpson, asr, rint, cfs, mixcfs, wsi
     macro uselib(lib)
         return :( d(f::Function, x::Number) = $lib.derivative(f, x) )
