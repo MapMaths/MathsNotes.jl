@@ -41,7 +41,7 @@ d (generic function with 2 method)
 
 The codes contains functions providing these features:
 
-Calculus: derivative, derivative function, second and higher derivative (and their corresponding functions), partial derivative (function), curvature, l'Hospital's rule, ASR (Adaptive Simpson's Rule), CFS (Continuous Fourier Series).
+Calculus: derivative, derivative function, second and higher derivative (and their corresponding functions), partial derivative (function), curvature, l'Hospital's rule, ASR (Adaptive Simpson's Rule), CFS (Continuous Fourier Series), Lagrange's Interpolation, Whittaker-Shannon's Interpolation.
 
 Basic Algebra: Rational Root Theorem.
 
