@@ -1,5 +1,5 @@
 module MathsNotes
-    using ForwardDiff, LinearAlgebra, Calculus
+    using ForwardDiff, LinearAlgebra, Calculus, Polynomial
     export @uselib, d, d², dⁿ, ∂, κ, lHôpital, rrt, lag, simpson, asr, rint, cfs, mixcfs, wsi
     macro uselib(lib)
         return :( d(f::Function, x::Number) = $lib.derivative(f, x) )
@@ -34,23 +34,18 @@ module MathsNotes
         end
         a
     end
-    function con(a::Vector, n::Union{Integer, Rational})
-        s = a[end]
-        for i = 1:length(a)-1
-            s += a[i]*n^(length(a)-i)
-        end
-        s
-    end
     # Rational Root Theorem
-    function rrt(a::Vector)
-        s = con(a, 0) == 0 ? [0] : []
-        db = finddiv(a[1])
-        de = finddiv(a[end])
-        for p ∈ de, q ∈ db
-            con(a, p//q) == 0 && push!(s, q == 1 ? p : p//q)
-            con(a, -p//q) == 0 && push!(s, q == 1 ? -p : -p//q)
+    function rrt(a::Vector{T} where T<:Integer)
+        pl = Polynomial(a)
+        s = Rational[]
+        db = a[1] == 0 ? throw(DivideError) : finddiv(a[1])
+        de = a[end] == 0 ? throw(DivideError) : finddiv(a[end])
+        for p ∈ db, q ∈ de
+            gcd(p, q) ≠ 1 && continue
+            pl(p//q) == 0 && push!(s, q == 1 ? p : p//q)
+            pl(-p//q) == 0 && push!(s, q == 1 ? -p : -p//q)
         end
-        s
+        (s,pl÷fromroots(s))
     end
 
     # Lagrange interpolation
