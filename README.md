@@ -49,7 +49,7 @@ Harmonic Analysis: CFS (Continuous Fourier Series), Whittaker-Shannon's Interpol
 
 Differential Geometry: curvature
 
-Elementary Algebra: Rational Root Theorem.
+Elementary Number Theory: Rational Root Theorem.
 
 Note: the derivative function calculator will NOT do any symbolic calculations, as it is just a abbreviation for `x -> d(f, x)`
 
@@ -89,6 +89,9 @@ d (generic function with 2 methods)
 
 julia> lHôpital(x -> exp(-1/x^2), x -> x^2, 0)
 0.0
+
+julia> rrt([3, -31, 102, -111, -1, 30]) # Finding the rational roots of 30x⁵-x⁴-111x³+102x²-31x+3=0, and return the polynomial formed from the irrational roots of the original polynomial additionally.
+(Rational[1//2, 1//3, 1//5], Polynomial(-90//1 + 30//1*x + 30//1*x^2))
 ```
 
 ## Need to improve
